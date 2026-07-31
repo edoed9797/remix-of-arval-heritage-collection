@@ -10,33 +10,79 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CollezioniRouteImport } from './routes/collezioni'
+import { Route as ContattiRouteImport } from './routes/contatti'
+import { Route as StoriaRouteImport } from './routes/storia'
+import { Route as ProdottoSlugRouteImport } from './routes/prodotto.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CollezioniRoute = CollezioniRouteImport.update({
+  id: '/collezioni',
+  path: '/collezioni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContattiRoute = ContattiRouteImport.update({
+  id: '/contatti',
+  path: '/contatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoriaRoute = StoriaRouteImport.update({
+  id: '/storia',
+  path: '/storia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdottoSlugRoute = ProdottoSlugRouteImport.update({
+  id: '/prodotto/$slug',
+  path: '/prodotto/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/collezioni': typeof CollezioniRoute
+  '/contatti': typeof ContattiRoute
+  '/storia': typeof StoriaRoute
+  '/prodotto/$slug': typeof ProdottoSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/collezioni': typeof CollezioniRoute
+  '/contatti': typeof ContattiRoute
+  '/storia': typeof StoriaRoute
+  '/prodotto/$slug': typeof ProdottoSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/collezioni': typeof CollezioniRoute
+  '/contatti': typeof ContattiRoute
+  '/storia': typeof StoriaRoute
+  '/prodotto/$slug': typeof ProdottoSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/collezioni' | '/contatti' | '/storia' | '/prodotto/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/collezioni' | '/contatti' | '/storia' | '/prodotto/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/collezioni'
+    | '/contatti'
+    | '/storia'
+    | '/prodotto/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CollezioniRoute: typeof CollezioniRoute
+  ContattiRoute: typeof ContattiRoute
+  StoriaRoute: typeof StoriaRoute
+  ProdottoSlugRoute: typeof ProdottoSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +94,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/collezioni': {
+      id: '/collezioni'
+      path: '/collezioni'
+      fullPath: '/collezioni'
+      preLoaderRoute: typeof CollezioniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contatti': {
+      id: '/contatti'
+      path: '/contatti'
+      fullPath: '/contatti'
+      preLoaderRoute: typeof ContattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/storia': {
+      id: '/storia'
+      path: '/storia'
+      fullPath: '/storia'
+      preLoaderRoute: typeof StoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prodotto/$slug': {
+      id: '/prodotto/$slug'
+      path: '/prodotto/$slug'
+      fullPath: '/prodotto/$slug'
+      preLoaderRoute: typeof ProdottoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CollezioniRoute: CollezioniRoute,
+  ContattiRoute: ContattiRoute,
+  StoriaRoute: StoriaRoute,
+  ProdottoSlugRoute: ProdottoSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
