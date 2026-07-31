@@ -192,7 +192,7 @@ function Home() {
             <Link key={c} to="/collezioni" className="group">
               <div className="media-card aspect-square">
                 <img
-                  src={products[i % products.length].image}
+                  src={products[i % products.length]!.image}
                   alt={c}
                   loading="lazy"
                   className="h-full w-full object-cover"
