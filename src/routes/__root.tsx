@@ -77,16 +77,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Arval Argenti Valenza — Argenteria italiana dal 1967" },
+      {
+        name: "description",
+        content:
+          "Argenteria artistica di Valenza dal 1967. Regali di matrimonio, nascita, laurea e articoli sacri in argento, con confezione regalo e incisione.",
+      },
+      { name: "author", content: "Arval Argenti Valenza" },
+      { property: "og:title", content: "Arval Argenti Valenza — Argenteria italiana dal 1967" },
+      {
+        property: "og:description",
+        content: "Oggetti in argento che diventano ricordi. Boutique storica di Valenza.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Manrope:wght@300;400;500;600&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
