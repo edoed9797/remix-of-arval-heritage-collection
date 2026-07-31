@@ -53,7 +53,7 @@ function Home() {
           alt="Vaso, candeliere e vassoio in argento su tavola in lino"
           width={1920}
           height={1088}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[72%_center] md:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/55 via-ink/25 to-transparent" />
         <div className="shell relative flex h-full items-end pb-20 md:items-center md:pb-0">
