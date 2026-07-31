@@ -55,7 +55,7 @@ function Home() {
           height={1088}
           className="absolute inset-0 h-full w-full object-cover object-[72%_center] md:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/55 via-ink/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/10 md:bg-gradient-to-r md:from-ink/55 md:via-ink/25 md:to-transparent" />
         <div className="shell relative flex h-full items-end pb-20 md:items-center md:pb-0">
           <div className="max-w-2xl rise">
             <p className="eyebrow text-white/70">Argenteria artistica · Valenza</p>
