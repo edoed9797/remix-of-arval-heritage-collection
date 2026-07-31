@@ -77,20 +77,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Arval Argenti Valenza — Argenteria italiana dal 1967" },
+      { title: "Arval Argenti Valenza — L'argento racconta emozioni dal 1967" },
       {
         name: "description",
         content:
-          "Argenteria artistica di Valenza dal 1967. Regali di matrimonio, nascita, laurea e articoli sacri in argento, con confezione regalo e incisione.",
+          "Boutique storica di argenteria a Valenza: regali di nozze, nascita, laurea, articoli sacri e complementi d'arredo in argento, con confezione regalo.",
       },
       { name: "author", content: "Arval Argenti Valenza" },
-      { property: "og:title", content: "Arval Argenti Valenza — Argenteria italiana dal 1967" },
+      { property: "og:title", content: "Arval Argenti Valenza — L'argento racconta emozioni dal 1967" },
       {
         property: "og:description",
-        content: "Oggetti in argento che diventano ricordi. Boutique storica di Valenza.",
+        content: "Boutique storica di argenteria a Valenza: regali di nozze, nascita, laurea, articoli sacri e complementi d'arredo in argento, con confezione regalo.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Arval Argenti Valenza — L'argento racconta emozioni dal 1967" },
+      { name: "twitter:description", content: "Boutique storica di argenteria a Valenza: regali di nozze, nascita, laurea, articoli sacri e complementi d'arredo in argento, con confezione regalo." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b46b7885-3a55-47e0-947f-d214a462592f/id-preview-880aea21--43b4b04c-de23-4d68-9b9b-fdedfb5f84a0.lovable.app-1785507211755.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b46b7885-3a55-47e0-947f-d214a462592f/id-preview-880aea21--43b4b04c-de23-4d68-9b9b-fdedfb5f84a0.lovable.app-1785507211755.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

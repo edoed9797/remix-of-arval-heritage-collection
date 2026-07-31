@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Arval Argenti Valenza — L'argento racconta emozioni dal 1967" },
       {
         property: "og:description",
-        content: "Oggetti in argento che diventano ricordi. Artigianato italiano dal 1967.",
+        content: "Boutique storica di argenteria a Valenza: regali di nozze, nascita, laurea, articoli sacri e complementi d'arredo in argento, con confezione regalo.",
       },
     ],
   }),
@@ -53,9 +53,9 @@ function Home() {
           alt="Vaso, candeliere e vassoio in argento su tavola in lino"
           width={1920}
           height={1088}
-          className="absolute inset-0 h-full w-full object-cover object-[72%_center] md:object-center"
+          className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/10 md:bg-gradient-to-r md:from-ink/55 md:via-ink/25 md:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/55 via-ink/25 to-transparent" />
         <div className="shell relative flex h-full items-end pb-20 md:items-center md:pb-0">
           <div className="max-w-2xl rise">
             <p className="eyebrow text-white/70">Argenteria artistica · Valenza</p>
@@ -192,7 +192,7 @@ function Home() {
             <Link key={c} to="/collezioni" className="group">
               <div className="media-card aspect-square">
                 <img
-                  src={products[i % products.length]!.image}
+                  src={products[i % products.length].image}
                   alt={c}
                   loading="lazy"
                   className="h-full w-full object-cover"
